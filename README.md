@@ -1,2 +1,2 @@
 # auniversityofwhales
-A University of Whale's AWESOME website!
+A University of Whales' AWESOME website!
