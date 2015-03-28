@@ -1,0 +1,36 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.center-content {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.header {
+    display: table;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/whaleslogo.jpg);
+    background-attachment: fixed;
+    background-position: 50% 20%; 
+    background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+}
+
+ul.social-center {
+    background-color: rgba(90, 90, 90, 0.5); //semi-transparent red
+}
+
+ul.social-center li{
+    display: inline;
+}
+
+ul.social-center img{
+    max-width: 50px;
+}
