@@ -4,12 +4,15 @@ body {
     height: 100%;
 }
 
+:root {
+    --size: calc(1887px*.6);
+};
+
 .whale {
-  height: 80%;
-  width: 80%;
   margin-left: 20%;
   animation-duration: 5s;
   animation-name: slidein;
+  position: relative;
 }
 
 @keyframes slidein {
@@ -54,4 +57,45 @@ ul.social-center li{
 
 ul.social-center img{
     max-width: 50px;
+}
+
+.body {
+    object-fit: scale-down;
+}
+
+.torso {
+    position: absolute;
+    z-index: 1;
+    width: var(--size);
+}
+
+.fin {
+    position: absolute;
+    animation-name: flap;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 1s;
+}
+
+.left.fin {
+    width: calc(var(--size)*.242);
+    top: calc(var(--size)*.61);
+    left: calc(var(--size)*.4);
+    z-index: 2;
+}
+
+.right.fin {
+    width: calc(var(--size)*.128);
+    top: calc(var(--size)*.636);
+    left: calc(var(--size)*.095);
+    z-index: 0;
+    animation-delay: 1s;
+}
+
+@keyframes flap {
+    from  {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(15deg);
+    }
 }
