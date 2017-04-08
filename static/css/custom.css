@@ -1,5 +1,6 @@
 :root {
-    --size: 1600px;
+    --size: 80%;
+    --fliptime: 5s;
 }
 
 html,
@@ -25,6 +26,39 @@ body {
     -o-background-size: cover;
     -moz-background-size: cover;
     -webkit-background-size: cover;
+    animation-name: fadeout;
+    animation-duration: calc(var(--fliptime) + 2s);
+    opacity: 0;
+    animation-iteration-count: 1;
+    position: absolute;;
+    z-index: 1;
+}
+
+.bg {
+    display: table;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/whaleslogo.jpg);
+    background-attachment: fixed;
+    background-position: 50% 20%;
+    background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    position: absolute;
+    z-index: 0;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 ul.social-center {
@@ -40,9 +74,10 @@ ul.social-center img{
 }
 
 .whale {
-  animation-duration: 5s;
-  animation-name: slidein;
-  position: relative;
+    margin-left: 20%;
+    animation-duration: var(--fliptime);
+    animation-name: slidein;
+    position: relative;
 }
 
 @keyframes slidein {
@@ -58,18 +93,14 @@ ul.social-center img{
   }
 }
 
-.body {
-    object-fit: scale-down;
-}
-
 .torso {
-    position: absolute;
+    /*position: absolute;*/
     z-index: 1;
     width: var(--size);
 }
 
 .fin {
-    position: absolute;
+    /*position: absolute;*/
     animation-name: flap;
     animation-iteration-count: infinite;
     animation-direction: alternate;
