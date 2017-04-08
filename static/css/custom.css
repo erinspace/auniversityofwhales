@@ -1,31 +1,11 @@
+:root {
+    --size: 1600px;
+}
+
 html,
 body {
     width: 100%;
     height: 100%;
-}
-
-:root {
-    --size: calc(1887px*.6);
-};
-
-.whale {
-  margin-left: 20%;
-  animation-duration: 5s;
-  animation-name: slidein;
-  position: relative;
-}
-
-@keyframes slidein {
-  from {
-    margin-left: 100%;
-    margin-top: -100%;
-    transform: rotate(-70deg);
-  }
-
-  to {
-    margin-left: 20%;
-    transform: rotate(0deg);
-  }
 }
 
 .center-content {
@@ -57,6 +37,26 @@ ul.social-center li{
 
 ul.social-center img{
     max-width: 50px;
+}
+
+.whale {
+  margin-left: 20%;
+  animation-duration: 5s;
+  animation-name: slidein;
+  position: relative;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    margin-top: -100%;
+    transform: rotate(-70deg);
+  }
+
+  to {
+    margin-left: 20%;
+    transform: rotate(0deg);
+  }
 }
 
 .body {
