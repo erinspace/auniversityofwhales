@@ -1,6 +1,6 @@
 :root {
     --size: 80%;
-    --fliptime: 5s;
+    --fliptime: 10s;
 }
 
 html,
@@ -44,42 +44,55 @@ ul.social-center img{
   /*margin-left: 20%;*/
   /*margin-top: 10%;*/
   animation-duration: var(--fliptime);
-  animation-name: doacoolflip;
+  animation-name: enterandexit;
   position: relative;
   visibility: hidden;
 }
 
-@keyframes doacoolflip {
+@keyframes enterandexit {
   0% {
     margin-right: -100%;
     margin-top: -100%;
+    margin-left: 100%;
     transform: rotate(-80deg);
     visibility: visible;
   }
 
-  50% {
+  20% {
     margin-right: 0%;
+    margin-top: 10%;
     margin-left: 20%;
     transform: rotate(0deg);
+    visibility: visible;
   }
 
-  60% {
+  30% {
+    margin-right: 0%;
+    margin-top: 10%;
     margin-left: 20%;
     transform: rotate(15deg);
   }
 
-  80% {
+  40% {
+    margin-right: 0%;
+    margin-top: 10%;
     margin-left: 20%;
     transform: rotate(-15deg);
+  }
+
+  50% {
+    margin-right: 0%;
+    margin-top: 10%;
+    margin-left: 20%;
+    transform: rotate(0deg);
   }
 
   100% {
     margin-right: 200%;
     margin-left: -100%;
-    margin-bottom: 100%;
+    margin-top: 0%;
     transform: rotate(60deg);
   }
-
 }
 
 .body {
