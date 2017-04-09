@@ -21,18 +21,14 @@ body {
     width: 100%;
     height: 100%;
     background-image: url(../img/no_whale_background.jpg);
-    background-attachment: fixed;
-    background-position: 50% 20%;
+    /*background-attachment: fixed;*/
+    /*background-position: 50% 20%;*/
     background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
     -webkit-background-size: cover;
-    animation-name: fadeout;
-    animation-duration: calc(var(--fliptime) + 2s);
-    opacity: 0;
-    animation-iteration-count: 1;
     position: absolute;;
-    z-index: 1;
+    z-index: 0;
 }
 
 .bg {
@@ -40,25 +36,31 @@ body {
     width: 100%;
     height: 100%;
     background-image: url(../img/whaleslogo.jpg);
-    background-attachment: fixed;
-    background-position: 50% 20%;
+    /*background-attachment: fixed;*/
+    /*background-position: 50% 20%;*/
     background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
     -webkit-background-size: cover;
     position: absolute;
-    z-index: 0;
+    z-index: 1;
+    animation-name: fadein;
+    animation-duration: var(--fliptime);
+    animation-iteration-count: 1;
 }
 
-@keyframes fadeout {
+@keyframes fadein {
     0% {
-        opacity: 1;
+        opacity: 0;
+    }
+    65% {
+        opacity: 0;
     }
     80%{
         opacity: 1;
     }
     100% {
-        opacity: 0;
+        opacity: 1;
     }
 }
 
