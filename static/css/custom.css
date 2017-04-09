@@ -10,6 +10,14 @@ body {
     font-family: 'Amatic SC', cursive;
 }
 
+.divider{
+    /*position:absolute;*/
+    /*left:50%;
+    top:10%;
+    bottom:10%;*/
+    border-left:1px solid white;
+}
+
 .center-content {
     display: table-cell;
     text-align: center;
@@ -22,7 +30,7 @@ body {
     height: 100%;
     background-image: url(../img/no_whale_background.jpg);
     /*background-attachment: fixed;*/
-    /*background-position: 50% 20%;*/
+    background-position: 60% 20%;
     background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
@@ -37,7 +45,7 @@ body {
     height: 100%;
     background-image: url(../img/whaleslogo.jpg);
     /*background-attachment: fixed;*/
-    /*background-position: 50% 20%;*/
+    background-position: 50% 20%;
     background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
@@ -53,7 +61,7 @@ body {
     0% {
         opacity: 0;
     }
-    65% {
+    70% {
         opacity: 0;
     }
     80%{
@@ -65,15 +73,24 @@ body {
 }
 
 ul.social-center {
-    background-color: rgba(90, 90, 90, 0.5); //semi-transparent red
+    background-color: rgba(90, 90, 90, 0.7); //semi-transparent red
 }
 
 ul.social-center li{
+    font-size: -webkit-xxx-large;
     display: inline;
+    margin-left: 15px;
+    margin-right: 15px;
+    color: white;
 }
 
 ul.social-center img{
     max-width: 50px;
+}
+
+ul.social-center a {
+  text-decoration: none;
+  color: white;
 }
 
 .whale {
@@ -114,7 +131,7 @@ ul.social-center img{
     transform: rotate(-15deg);
   }
 
-  50% {
+  60% {
     margin-right: 0%;
     margin-top: 10%;
     margin-left: 20%;
