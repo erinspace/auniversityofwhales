@@ -1,28 +1,13 @@
+:root {
+    --size: 80%;
+    --fliptime: 10s;
+}
+
 html,
 body {
     width: 100%;
     height: 100%;
-}
-
-.whale {
-  height: 80%;
-  width: 80%;
-  margin-left: 20%;
-  animation-duration: 5s;
-  animation-name: slidein;
-}
-
-@keyframes slidein {
-  from {
-    margin-left: 100%;
-    margin-top: -100%;
-    transform: rotate(-70deg);
-  }
-
-  to {
-    margin-left: 20%;
-    transform: rotate(0deg);
-  }
+    font-family: 'Amatic SC', cursive;
 }
 
 .center-content {
@@ -35,13 +20,48 @@ body {
     display: table;
     width: 100%;
     height: 100%;
-    background-image: url(../img/no_whale_background.png);
-    background-attachment: fixed;
-    background-position: 50% 20%;
+    background-image: url(../img/no_whale_background.jpg);
+    /*background-attachment: fixed;*/
+    /*background-position: 50% 20%;*/
     background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
     -webkit-background-size: cover;
+    position: absolute;;
+    z-index: 0;
+}
+
+.bg {
+    display: table;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/whaleslogo.jpg);
+    /*background-attachment: fixed;*/
+    /*background-position: 50% 20%;*/
+    background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    position: absolute;
+    z-index: 1;
+    animation-name: fadein;
+    animation-duration: var(--fliptime);
+    animation-iteration-count: 1;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    65% {
+        opacity: 0;
+    }
+    80%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 ul.social-center {
@@ -54,4 +74,95 @@ ul.social-center li{
 
 ul.social-center img{
     max-width: 50px;
+}
+
+.whale {
+  animation-duration: var(--fliptime);
+  animation-name: enterandexit;
+  position: relative;
+  visibility: hidden;
+}
+
+@keyframes enterandexit {
+  0% {
+    margin-right: -100%;
+    margin-top: -100%;
+    margin-left: 100%;
+    transform: rotate(-80deg);
+    visibility: visible;
+  }
+
+  20% {
+    margin-right: 0%;
+    margin-top: 10%;
+    margin-left: 20%;
+    transform: rotate(0deg);
+    visibility: visible;
+  }
+
+  30% {
+    margin-right: 0%;
+    margin-top: 10%;
+    margin-left: 20%;
+    transform: rotate(15deg);
+  }
+
+  40% {
+    margin-right: 0%;
+    margin-top: 10%;
+    margin-left: 20%;
+    transform: rotate(-15deg);
+  }
+
+  50% {
+    margin-right: 0%;
+    margin-top: 10%;
+    margin-left: 20%;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    margin-right: 200%;
+    margin-left: -100%;
+    margin-top: 0%;
+    transform: rotate(60deg);
+  }
+}
+
+.body {
+    object-fit: scale-down;
+}
+
+.torso {
+    z-index: 1;
+    width: var(--size);
+}
+
+.fin {
+    position: absolute;
+    animation-name: flap;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 1s;
+}
+.left.fin {
+    width: calc(var(--size)*.242);
+    top: calc(var(--size));
+    left: calc(var(--size)*.4);
+    z-index: 2;
+}
+.right.fin {
+    width: calc(var(--size)*.128);
+    top: calc(var(--size)*1.05);
+    left: calc(var(--size)*.095);
+    z-index: 0;
+    animation-delay: 1s;
+}
+
+@keyframes flap {
+    from  {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(15deg);
+    }
 }
